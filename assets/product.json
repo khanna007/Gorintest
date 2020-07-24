@@ -1,0 +1,17 @@
+[
+{
+"product_name":"product 1",
+"tag":"Organic",
+  "price": "123"
+},
+{
+"product_name":"product 2",
+"tag":"In Organic",
+  "price": "199.50"
+},
+  {
+    "product_name":"product 3",
+    "tag":"notag",
+    "price": "240.50"
+  }
+]
