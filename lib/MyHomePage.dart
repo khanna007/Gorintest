@@ -31,57 +31,57 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ListView.builder(
-        shrinkWrap: true,
-        itemCount: decodedObject?.length,
-        itemBuilder: (context, int i) {
-          print(decodedObject[i]['header']);
-          return Container(
-            height: 250,
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                SizedBox(
-                  height: 40,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      decodedObject[i]['header'],
-                      style: TextStyle(
-                          fontSize: 22.0, fontWeight: FontWeight.w700),
+        appBar: AppBar(
+          title: Text("Hello"),
+        ),
+        body: ListView.builder(
+          shrinkWrap: true,
+          itemCount: decodedObject?.length,
+          itemBuilder: (context, int i) {
+            print(decodedObject[i]['header']);
+            return Container(
+              height: 250,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: 40,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        decodedObject[i]['header'],
+                        style: TextStyle(
+                            fontSize: 22.0, fontWeight: FontWeight.w700),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: GridView.builder(
-                    itemCount: decodedObject[i]['item'].length,
-                    scrollDirection: Axis.horizontal,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
-                    itemBuilder: (BuildContext context, int index) {
-                      return Card(
-                        child: GridTile(
-                          child: Center(
-                            child: Text(
-                              decodedObject[i]['item'][index],
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18.0),
-                            ),
-                          ), //just for testing, will fill with image later
-                        ),
-                      );
-                    },
-                  ),
-                )
-              ],
-            ),
-          );
-        },
-      ),
-    );
+                  Expanded(
+                    child: GridView.builder(
+                      itemCount: decodedObject[i]['item'].length,
+                      scrollDirection: Axis.horizontal,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2),
+                      itemBuilder: (BuildContext context, int index) {
+                        return Card(
+                          child: GridTile(
+                            child: Center(
+                              child: Text(
+                                decodedObject[i]['item'][index],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18.0),
+                              ),
+                            ), //just for testing, will fill with image later
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+        ));
   }
 }
